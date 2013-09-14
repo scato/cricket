@@ -1,3 +1,0 @@
-cricket_cricket_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: CricketCricketBundle:Default:index }

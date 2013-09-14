@@ -1,7 +1,0 @@
-parameters:
-#    cricket_cricket.example.class: Cricket\CricketBundle\Example
-
-services:
-#    cricket_cricket.example:
-#        class: %cricket_cricket.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
