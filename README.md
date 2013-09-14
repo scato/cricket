@@ -14,7 +14,8 @@ Is converted into:
 
     "u = :user"
 
-Check out https://github.com/scato/cricket/tree/master/spec/Cricket/CricketBundle/Convertor/ClosureConvertorSpec.php
+Check out
+[ClosureConvertorSpec](https://github.com/scato/cricket/tree/master/spec/Cricket/CricketBundle/Convertor/ClosureConvertorSpec.php)
 for current functionality.
 
 Background
