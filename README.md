@@ -28,11 +28,11 @@ for current functionality.
 Background
 ----------
 
-I use the built-in tokenizer: tokens_get_all().
+I use the built-in tokenizer: [token_get_all()](http://www.php.net/manual/en/function.token-get-all.php).
 
 I built my own parser (Vaughan Pratt's top down operator precedence, like
-Douglas Crockford used on JSLint) because I want to parse a specific
-subset of PHP.
+[Douglas Crockford used on JSLint](http://javascript.crockford.com/tdop/tdop.html))
+because I want to parse a specific subset of PHP.
 
 I added some basic magic to PHP's reflection, because you can't just ask
 for the body of a function.
