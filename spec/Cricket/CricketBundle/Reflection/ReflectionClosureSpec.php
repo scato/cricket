@@ -20,9 +20,9 @@ class ReflectionClosureSpec extends ObjectBehavior
         $this->beConstructedWith($closure);
     }
 
-    function it_fetches_the_source()
+    function it_fetches_the_body()
     {
-        $this->getSource()->shouldReturn('return $par == $val;');
+        $this->getBody()->shouldReturn('return $par == $val;');
     }
 
     function it_gives_you_its_parameters()

@@ -14,7 +14,7 @@ class ReflectionClosure
         $this->closure = $closure;
     }
 
-    public function getSource()
+    public function getBody()
     {
         $meta = new ReflectionFunction($this->closure);
 
@@ -23,18 +23,18 @@ class ReflectionClosure
 
         $offset = $meta->getStartLine() - 1;
         $length = $meta->getEndLine() - $offset;
-        $source = array_slice($lines, $offset, $length);
-        $source = implode("\n", $source);
+        $body = array_slice($lines, $offset, $length);
+        $body = implode("\n", $body);
 
-        preg_match_all('/function[^{}]*\\{[^{}]*\\}/', $source, $matches);
+        preg_match_all('/function[^{}]*\\{[^{}]*\\}/', $body, $matches);
 
         if (count($matches[0]) !== 1) {
-            throw new RuntimeException("Source is invalid: '$source'");
+            throw new RuntimeException("Source is invalid: '$body'");
         }
 
-        $source = trim(preg_replace('/^function[^{}]*\\{([^{}]*)\\}$/', '\\1', $matches[0][0]));
+        $body = trim(preg_replace('/^function[^{}]*\\{([^{}]*)\\}$/', '\\1', $matches[0][0]));
 
-        return $source;
+        return $body;
     }
 
     public function getParameters()

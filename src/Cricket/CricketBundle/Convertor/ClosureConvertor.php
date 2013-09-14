@@ -11,16 +11,16 @@ class ClosureConvertor
     public function convert($closure)
     {
         $reflection = new ReflectionClosure($closure);
-        $source = $reflection->getSource();
+        $body = $reflection->getBody();
 
-        if (!preg_match('/^return(.*);$/', $source)) {
-            throw new RuntimeException("Unsupported closure: '$source'");
+        if (!preg_match('/^return(.*);$/', $body)) {
+            throw new RuntimeException("Unsupported closure: '$body'");
         }
 
-        $source = trim(preg_replace('/^return(.*);$/', '\\1', $source));
+        $body = trim(preg_replace('/^return(.*);$/', '\\1', $body));
         
         $parser = new ExpressionParser();
-        $root = $parser->parse($source);
+        $root = $parser->parse($body);
 
         $visitor = new ConvertorVisitor(
             $reflection->getParameters(),
