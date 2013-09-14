@@ -10,7 +10,22 @@ For example, the following:
         return $u == $user;
     }
 
-is converted into:
+Is converted into:
 
     "u = :user"
+
+Check out /spec/Cricket/CricketBundle/Convertor/ClosureConvertorSpec.php
+for current functionality.
+
+Background
+----------
+
+I use the built-in tokenizer: tokens_get_all().
+
+I built my own parser (Vaughan Pratt's top down operator precedence, like
+Douglas Crockford used on JSLint) because I want to parse a specific
+subset of PHP.
+
+I added some basic magic to PHP's reflection, because you can't just ask
+for the body of a function.
 
