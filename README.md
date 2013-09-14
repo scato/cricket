@@ -14,6 +14,13 @@ Is converted into:
 
     "u = :user"
 
+You can use
+[ReflectionClosure](https://github.com/scato/cricket/blob/master/src/Cricket/CricketBundle/Reflection/ReflectionClosure.php)
+to retrieve the current value of bound variables:
+
+    $reflection = new ReflectionClosure($closure);
+    $reflection->getBoundValue('user');
+
 Check out
 [ClosureConvertorSpec](https://github.com/scato/cricket/tree/master/spec/Cricket/CricketBundle/Convertor/ClosureConvertorSpec.php)
 for current functionality.
